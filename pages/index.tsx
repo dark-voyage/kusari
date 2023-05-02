@@ -50,13 +50,7 @@ const Home: NextPage = () => {
               />
               <Button
                 onClick={() => {
-                  navigator.clipboard.writeText(
-                    `${
-                      baseUrl == 'https://xn--qv8h.uz/'
-                        ? 'https://🔗.uz/'
-                        : baseUrl
-                    }/${id}`
-                  )
+                  navigator.clipboard.writeText(`${baseUrl}/${id}`)
                 }}
               >
                 Copy
