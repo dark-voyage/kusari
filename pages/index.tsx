@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const baseUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center bg-slate-400">
+    <div className="h-screen w-screen flex justify-center items-center bg-gray-900">
       <Head>
         <title>Kusari</title>
         <link rel="icon" href="/favicon.ico" />

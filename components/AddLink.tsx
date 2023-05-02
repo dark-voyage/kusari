@@ -33,11 +33,11 @@ const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
     <form onSubmit={handleSubmit} className='mt-4'>
         <input 
         type="url" 
-        className='bg-gray-100 w-full h-10 px-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-sm text-1xl text-neutral-500' 
+        className='bg-gray-100 w-full h-10 px-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-sm text-1xl text-neutral-500'
         placeholder='Enter Your URL'
         onChange={(e) => setUrl(e.target.value)}
         />
-        <button type='submit' className="p-3 bg-red-400 hover:bg-red-500 rounded-lg transition-all duration-100 text-sm text-white mt-4">
+        <button type='submit' className="p-3 bg-black border border-black hover:bg-white hover:text-black hover:border hover:border-black rounded-lg transition-all duration-100 text-sm text-white mt-4">
             Shorten me
         </button>
     </form>
