@@ -18,7 +18,8 @@ const Home: NextPage = () => {
 
       <div className="max-w-2xl bg-white rounded-md w-full p-6 ">
 
-        <h1 className='font-semibold text-2xl'>Kusari - URL Shortener</h1>
+        <h1 className='font-semibold text-2xl'>Kusari</h1>
+        <p className='text-gray-500 text-sm'>A simple URL shortener</p>
         <AddLink id={id} setId={setId} />
 
         {id && (

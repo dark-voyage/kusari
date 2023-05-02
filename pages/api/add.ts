@@ -7,7 +7,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  
   const { url } = req.body;
   const id = Math.random().toString(36).substr(2, 6);
   const existUrl = await prisma.link.findMany({ where: { url } } );
