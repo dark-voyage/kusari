@@ -12,13 +12,13 @@ const Home: NextPage = () => {
   return (
     <div className="h-screen w-screen flex justify-center items-center bg-gray-900">
       <Head>
-        <title>Kusari</title>
+        <title>🔗 Kusari</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="max-w-2xl bg-white rounded-md w-full p-6 ">
 
-        <h1 className='font-semibold text-2xl'>Kusari</h1>
+        <h1 className='font-semibold text-2xl'>🔗 Kusari</h1>
         <p className='text-gray-500 text-sm'>A simple URL shortener</p>
         <AddLink id={id} setId={setId} />
 
