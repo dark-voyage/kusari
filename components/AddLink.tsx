@@ -1,10 +1,13 @@
+'use client'
+
 import React, { useState } from 'react'
 import axios, { AxiosRequestConfig } from 'axios'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
-import { CardFooter } from './ui/card'
 import { Loader2 } from 'lucide-react'
+import { ToastAction } from '@/components/ui/toast'
+import { useToast } from '@/components/ui/use-toast'
 
 type AddLinkParams = {
   id: string
@@ -14,6 +17,7 @@ type AddLinkParams = {
 const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
   const [url, setUrl] = useState('')
   const [loading, setLoading] = useState(false)
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,9 +32,17 @@ const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
         data: { url },
       }
       setLoading(true)
-      const { data } = await axios(config)
+      try {
+        const { data } = await axios(config)
+        setId(data)
+      } catch (error: any) {
+        toast({
+          title: 'Uh oh! Something went wrong.',
+          description: error?.message || 'Please try again.',
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+        })
+      }
       setLoading(false)
-      setId(data)
     }
   }
 
