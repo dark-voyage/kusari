@@ -10,6 +10,8 @@ import {
   CardContent,
   CardFooter,
 } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
 const Home: NextPage = () => {
   const [id, setId] = useState('')
@@ -38,12 +40,27 @@ const Home: NextPage = () => {
           <AddLink id={id} setId={setId} />
         </CardContent>
         <CardFooter>
-          {id && (
-            <div className="bg-fuchsia-50 flex items-center justify-center w-full text-xl text-cyan-800 mt-4 p-3 rounded-sm">
-              <a
-                href={`${baseUrl}/${id}`}
-                target="_blank"
-              >{`${baseUrl}/${id}`}</a>
+          {true && (
+            <div className="flex w-full max-w-sm items-center space-x-2">
+              <Input
+                type="url"
+                placeholder="URL"
+                value={`${baseUrl}/${id}`}
+                disabled
+              />
+              <Button
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `${
+                      baseUrl == 'https://xn--qv8h.uz/'
+                        ? 'https://🔗.uz/'
+                        : baseUrl
+                    }/${id}`
+                  )
+                }}
+              >
+                Copy
+              </Button>
             </div>
           )}
         </CardFooter>
