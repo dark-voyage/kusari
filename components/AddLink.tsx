@@ -52,7 +52,8 @@ const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
         <div className="flex flex-col space-y-1.5">
           <Label htmlFor="name">Enter URL</Label>
           <Input
-            id="name"
+            id="url"
+            name="url"
             type="url"
             placeholder="Enter Your URL"
             onChange={(e) => setUrl(e.target.value)}
