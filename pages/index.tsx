@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           <AddLink id={id} setId={setId} />
         </CardContent>
         <CardFooter>
-          {true && (
+          {id && (
             <div className="flex w-full max-w-sm items-center space-x-2">
               <Input
                 type="url"
