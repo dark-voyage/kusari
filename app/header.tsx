@@ -5,12 +5,9 @@ import { usePathname } from "next/navigation";
 
 const navigation = [
   {
-    name: "Share",
-    href: "/share",
-  },
-  {
-    name: "Unseal",
-    href: "/unseal",
+    name: "Telegram",
+    href: "https://t.me/yurionblog",
+    external: true,
   },
   {
     name: "GitHub",

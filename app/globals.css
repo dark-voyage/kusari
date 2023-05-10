@@ -8,7 +8,6 @@
         @apply appearance-none;
     }
 
-
     input[type="file"] {
         @apply appearance-none;
     }

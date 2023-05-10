@@ -5,7 +5,7 @@ export default function Head({ title, subtitle }: { title: string; subtitle: str
 
   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
 
-  const url = new URL("/api/v1/og", baseUrl);
+  const url = new URL("/api/og", baseUrl);
   url.searchParams.set("title", title);
   url.searchParams.set("subtitle", subtitle);
 

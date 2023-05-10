@@ -7,7 +7,7 @@ export const Stats = asyncComponent(async () => {
   // Number of reads
   const reads = await prisma.link.count();
 
-  const stars = await fetch("https://api.github.com/repos/katsuki-yuri/kankyou")
+  const stars = await fetch("https://api.github.com/repos/katsuki-yuri/kusari")
     .then((res) => res.json())
     .then((json) => json.stargazers_count as number);
 
@@ -27,7 +27,7 @@ export const Stats = asyncComponent(async () => {
 
   return (
     <section className="container mx-auto">
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3 ">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {stats.map(({ label, value }) => (
           <li
             key={label}
