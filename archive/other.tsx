@@ -1,25 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import React, { useState } from 'react'
-import AddLink from '../components/AddLink'
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import type { NextPage } from "next";
+import Head from "next/head";
+import React, { useState } from "react";
+import AddLink from "../components/AddLink";
+import { Card, CardDescription, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Home: NextPage = () => {
-  const [id, setId] = useState('')
+  const [id, setId] = useState("");
 
-  const baseUrl =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : ''
+  const baseUrl = typeof window !== "undefined" && window.location.origin ? window.location.origin : "";
 
   return (
     <div className="h-screen w-screen flex justify-center items-center bg-gray-900">
@@ -42,15 +32,10 @@ const Home: NextPage = () => {
         <CardFooter>
           {id && (
             <div className="flex w-full max-w-sm items-center space-x-2">
-              <Input
-                type="url"
-                placeholder="URL"
-                value={`${baseUrl}/${id}`}
-                disabled
-              />
+              <Input type="url" placeholder="URL" value={`${baseUrl}/${id}`} disabled />
               <Button
                 onClick={() => {
-                  navigator.clipboard.writeText(`${baseUrl}/${id}`)
+                  navigator.clipboard.writeText(`${baseUrl}/${id}`);
                 }}
               >
                 Copy
@@ -60,7 +45,7 @@ const Home: NextPage = () => {
         </CardFooter>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,62 +1,57 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import axios, { AxiosRequestConfig } from 'axios'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Label } from './ui/label'
-import { Loader2 } from 'lucide-react'
-import { ToastAction } from '@/components/ui/toast'
-import { useToast } from '@/components/ui/use-toast'
+import React, { useState } from "react";
+import axios, { AxiosRequestConfig } from "axios";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Loader2 } from "lucide-react";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
 
 type AddLinkParams = {
-  id: string
-  setId: React.Dispatch<React.SetStateAction<string>>
-}
+  id: string;
+  setId: React.Dispatch<React.SetStateAction<string>>;
+};
 
 const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
-  const [url, setUrl] = useState('')
-  const [loading, setLoading] = useState(false)
-  const { toast } = useToast()
+  const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (url.trim()) {
       const config: AxiosRequestConfig = {
-        method: 'POST',
-        url: '/api/add',
+        method: "POST",
+        url: "/api/add",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         data: { url },
-      }
-      setLoading(true)
+      };
+      setLoading(true);
       try {
-        const { data } = await axios(config)
-        setId(data)
+        const { data } = await axios(config);
+        setId(data);
       } catch (error: any) {
         toast({
-          title: 'Uh oh! Something went wrong.',
-          description: error?.message || 'Please try again.',
+          title: "Uh oh! Something went wrong.",
+          description: error?.message || "Please try again.",
           action: <ToastAction altText="Try again">Try again</ToastAction>,
-        })
+        });
       }
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="grid w-full items-center gap-4">
         <div className="flex flex-col space-y-1.5">
           <Label htmlFor="name">Enter URL</Label>
-          <Input
-            id="name"
-            type="url"
-            placeholder="Enter Your URL"
-            onChange={(e) => setUrl(e.target.value)}
-          />
+          <Input id="name" type="url" placeholder="Enter Your URL" onChange={(e) => setUrl(e.target.value)} />
         </div>
         <div className="flex flex-col space-y-1.5">
           {!loading ? (
@@ -70,7 +65,7 @@ const AddLink: React.FC<AddLinkParams> = ({ id, setId }) => {
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default AddLink
+export default AddLink;
