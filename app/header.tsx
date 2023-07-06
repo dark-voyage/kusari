@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 const navigation = [
   {
     name: "Telegram",
-    href: "https://t.me/yurionblog",
+    href: "https://t.me/orzklvb",
     external: true,
   },
   {
     name: "GitHub",
-    href: "https://github.com/katsuki-yuri/kusari",
+    href: "https://github.com/orzklv/kusari",
     external: true,
   },
 ] satisfies { name: string; href: string; external?: boolean }[];

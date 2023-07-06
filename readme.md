@@ -1,12 +1,12 @@
 <header>
-<img src="https://www.katsuki.moe/favicons/pinned.svg" alt="logo" height="100" align="left">
+<img src="https://www.orzklv.uz/favicons/logo.png" alt="logo" height="100" align="left">
 <h1 style="display: inline">Kusari</h1>
 
 Proof of concept URL Shortener using emoji domain
 
-[![GitHub top language](https://img.shields.io/github/languages/top/katsuki-yuri/kusari?style=flat-square&logo=github)](https://github.com/katsuki-yuri/neko)
-[![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/yurionblog)
-[![Makefile CI](https://github.com/katsuki-yuri/kusari/actions/workflows/test.yml/badge.svg)](https://github.com/katsuki-yuri/kusari/actions/workflows/test.yml)
+[![GitHub top language](https://img.shields.io/github/languages/top/orzklv/kusari?style=flat-square&logo=github)](https://github.com/orzklv/neko)
+[![Channel](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/orzklvb)
+[![Makefile CI](https://github.com/orzklv/kusari/actions/workflows/test.yml/badge.svg)](https://github.com/orzklv/kusari/actions/workflows/test.yml)
 
 </header>
 

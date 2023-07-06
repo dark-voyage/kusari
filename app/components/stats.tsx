@@ -7,7 +7,7 @@ export const Stats = asyncComponent(async () => {
   // Number of reads
   const reads = await prisma.link.count();
 
-  const stars = await fetch("https://api.github.com/repos/katsuki-yuri/kusari")
+  const stars = await fetch("https://api.github.com/repos/orzklv/kusari")
     .then((res) => res.json())
     .then((json) => json.stargazers_count as number);
 
